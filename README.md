@@ -10,7 +10,7 @@ array, and offers the possibility to extract the selectors, or restart.
 
 ## How to use it
 
-Copy the content of [capturer.js(capturer.js), and paste it into che Chrome console.
+Copy the content of [capturer.js](capturer.js), and paste it into che Chrome console.
 
 Go through your session.
 
