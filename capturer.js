@@ -64,3 +64,32 @@ window.onclick = (event) => {
     }
     BIM_start = BIM_start || new Date();
 }
+
+window.onkeyup = (event) => {
+    let selectors = [];
+    const selectorsArray = BIM_climbUp(event.target, selectors);
+    const selector = selectorsArray.join(' ') + ` | onkeyup ${event.key}`;
+    if (BIM_verbose) {
+        if (selector.trim()) {
+            console.log(`Key Up ${event.key} on: ${selector}`);
+        }
+    }
+    if (selector.trim() && BIM_sessionCapture[BIM_sessionCapture.length - 1] !== selector) {
+        BIM_sessionCapture.push(selector);
+    }
+    BIM_start = BIM_start || new Date();
+}
+// window.onkeydown = (event) => {
+//     let selectors = [];
+//     const selectorsArray = BIM_climbUp(event.target, selectors);
+//     const selector = selectorsArray.join(' ') + ` | onkeydown ${event.key}`;
+//     if (BIM_verbose) {
+//         if (selector.trim()) {
+//             console.log(`Key Down ${event.key} on: ${selector}`);
+//         }
+//     }
+//     if (selector.trim() && BIM_sessionCapture[BIM_sessionCapture.length - 1] !== selector) {
+//         BIM_sessionCapture.push(selector);
+//     }
+//     BIM_start = BIM_start || new Date();
+// }
