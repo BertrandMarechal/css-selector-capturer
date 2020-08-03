@@ -18,8 +18,11 @@ let BIM_climbUp = (element, selectors) => {
             selectors.unshift(`a[href="${element.href}"]`);
             return selectors;
         } else if (element.className) {
-            selectors.unshift(element.className.split(" ").join("."));
+            selectors.unshift('.' + element.className.split(" ").join("."));
+        } else if (element.name) {
+            selectors.unshift(`input[name="${element.name}"]`);
         }
+
         if(element.parentElement) {
             return BIM_climbUp(element.parentElement, selectors);
         }
